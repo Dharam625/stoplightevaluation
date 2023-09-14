@@ -1,0 +1,14 @@
+type: object
+description: 'Get Current Account Response'
+properties:
+  accountNumber:
+    type: string
+  balance:
+    type: number
+  owner:
+    type: object
+    properties:
+      name:
+        type: string
+      email:
+        type: string
