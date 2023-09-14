@@ -12,3 +12,9 @@ properties:
         type: string
       email:
         type: string
+examples:
+  - accountNumber: 01-0071-012345678-00
+    balance: 20
+    owner:
+      name: Test
+      email: test@gmail.com
