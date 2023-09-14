@@ -1,28 +1,18 @@
 type: object
 properties:
-  inputError:
-    type: object
-    description: An optional array of input error objects. An array of error info objects. All fields are mandatory if the object is returned.
-    properties:
-      errorCode:
-        type: integer
-        format: int32
-        description: Error code.
-        example: 1234
-      parameterType:
-        type: string
-        description: 'Type of input paramter, i.e. querystring, header or body'
-        example: querystring
-      parameterName:
-        type: string
-        description: The parameter name of whichever field has caused the error.
-        example: '12345678'
-      errorMessage:
-        type: string
-        description: Error message from the server
-        example: Invalid parameter value
-    required:
-      - errorCode
-      - parameterType
-      - parameterName
-      - errorMessage
+  errorCode:
+    type: integer
+    format: int32
+    description: Error code.
+    example: 400
+  errorMessage:
+    type: string
+    description: Error message
+    example: Bad Request
+  required:
+    - errorCode
+    - errorMessage
+examples:
+  - inputError:
+      errorCode: 500
+      errorMessage: Bad Request
