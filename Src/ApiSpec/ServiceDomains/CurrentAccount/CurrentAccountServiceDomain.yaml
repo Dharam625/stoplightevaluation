@@ -13,7 +13,7 @@ info:
     url: 'https://www.demo.co.nz'
     name: Demo
 servers:
-  - url: 'https://virtserver.swaggerhub.com/BIAN-3/BIAN/CurrentAccount/11.0.0'
+  - url: 'https://virtserver.swaggerhub.com/current-account/api'
 paths:
   /current-account:
     get:
@@ -25,34 +25,10 @@ paths:
             application/json:
               schema:
                 $ref: ./Schema/GetCurrentAccount.yaml
-              examples:
-                Example1:
-                  value:
-                    accountNumber: 01-0078-012345678-00
-                    balance: 25
-                    owner:
-                      name: Test
-                      email: test@gmail.com
-            application/xml:
-              schema:
-                type: object
-                properties: {}
-            multipart/form-data:
-              schema:
-                type: object
-                properties: {}
         '400':
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: ../../Common/BadRequest.yaml
         '401':
           description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UnAuthenticated.yaml'
       operationId: get-current-account
       x-stoplight:
         id: 56dotah8tv67d
@@ -93,37 +69,6 @@ paths:
         id: 9ddolbrcq5rg4
       tags:
         - DeleteCurrentAccount
-components:
-  schemas:
-    UnAuthorised.yaml:
-      title: UnAuthorised.yaml
-      x-stoplight:
-        id: hvea644tgrwbr
-      type: object
-      properties:
-        Status:
-          type: integer
-          x-stoplight:
-            id: v1ut6wi9xyzzp
-        Description:
-          type: string
-          x-stoplight:
-            id: 3rq818ilyety2
-    UnAuthenticated.yaml:
-      title: UnAuthenticated.yaml
-      x-stoplight:
-        id: xxst7cyj3pj4m
-      type: object
-      properties:
-        Status:
-          type: string
-          x-stoplight:
-            id: na3fgr5ow104r
-        Description:
-          type: string
-          x-stoplight:
-            id: g26xufh8bp38i
-      description: Unauthenticated
 x-internal: true
 tags:
   - name: GetCurrentAccount
