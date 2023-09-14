@@ -1,5 +1,5 @@
 type: object
-description: 'Get Current Account Response'
+description: Get Current Account Response
 properties:
   accountNumber:
     type: string
