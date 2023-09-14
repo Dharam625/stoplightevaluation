@@ -14,5 +14,5 @@ properties:
     - errorMessage
 examples:
   - inputError:
-      errorCode: 500
+      errorCode: 400
       errorMessage: Bad Request
