@@ -12,7 +12,7 @@ properties:
       4217 Maintenance Agency, and consist of three contiguous letters.
       (ISO20022)
     format: datatype
-description: ''
+description: curency
 x-stoplight:
   id: 6ljkjyibyay4p
 examples:
