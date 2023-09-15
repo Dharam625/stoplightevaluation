@@ -109,10 +109,6 @@ components:
       required:
         - errorCode
         - errorMessage
-      x-examples:
-        Example 1:
-          errorCode: 401
-          errorMessage: UnAuthenticated
       description: The HyperText Transfer Protocol (HTTP) 401 Unauthorized response status code indicates that the client request has not been completed because it lacks valid authentication credentials for the requested resource.
     OrphanModel.yaml:
       title: OrphanModel.yaml
