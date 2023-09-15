@@ -1,18 +1,25 @@
+title: BadRequest
+x-stoplight:
+  id: j91c8oa2pc2mc
 type: object
 properties:
   errorCode:
     type: integer
+    x-stoplight:
+      id: h3k1ov6uy284i
     format: int32
     description: Error code.
     example: 400
   errorMessage:
     type: string
+    x-stoplight:
+      id: 7jd5f5ocln3ke
     description: Error message
     example: Bad Request
-  required:
-    - errorCode
-    - errorMessage
+required:
+  - errorCode
+  - errorMessage
 examples:
-  - inputError:
-      errorCode: 400
-      errorMessage: Bad Request
+  - errorCode: 400
+    errorMessage: Bad Request
+description: 'The HyperText Transfer Protocol (HTTP) 400 Bad Request response status code indicates that the server cannot or will not process the request due to something that is perceived to be a client error (for example, malformed request syntax, invalid request message framing, or deceptive request routing).'

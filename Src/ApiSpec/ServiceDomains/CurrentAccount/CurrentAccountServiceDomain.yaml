@@ -15,7 +15,7 @@ info:
 servers:
   - url: 'https://virtserver.swaggerhub.com/current-account/api'
 paths:
-  /current-account:
+  '/current-account/{customerNumber}':
     get:
       summary: Your GET endpoint
       responses:
@@ -27,8 +27,16 @@ paths:
                 $ref: ./Schema/GetCurrentAccount.yaml
         '400':
           description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: ../../Common/BadRequest.yaml
         '401':
-          description: Unauthorized
+          description: UnAuthenticated error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnAuthenticated.yaml'
       operationId: get-current-account
       x-stoplight:
         id: 56dotah8tv67d
@@ -69,6 +77,51 @@ paths:
         id: 9ddolbrcq5rg4
       tags:
         - DeleteCurrentAccount
+    parameters:
+      - schema:
+          type: number
+        name: customerNumber
+        in: path
+        required: true
+        description: '123456789'
 x-internal: true
 tags:
   - name: GetCurrentAccount
+components:
+  schemas:
+    UnAuthenticated.yaml:
+      title: UnAuthenticated.yaml
+      x-stoplight:
+        id: jozpmpqthihb3
+      type: object
+      properties:
+        errorCode:
+          type: integer
+          x-stoplight:
+            id: w9uztvivhv5r4
+          format: int32
+          example: 401
+        errorMessage:
+          type: string
+          x-stoplight:
+            id: 36wttgj08lxkr
+          example: UnAuthenticated
+      required:
+        - errorCode
+        - errorMessage
+      x-examples:
+        Example 1:
+          errorCode: 401
+          errorMessage: UnAuthenticated
+      description: The HyperText Transfer Protocol (HTTP) 401 Unauthorized response status code indicates that the client request has not been completed because it lacks valid authentication credentials for the requested resource.
+    OrphanModel.yaml:
+      title: OrphanModel.yaml
+      x-stoplight:
+        id: a7ztssppk4iqq
+      type: object
+      properties:
+        status:
+          type: string
+          x-stoplight:
+            id: 2qkbnu8g82bb1
+      description: Not used model
