@@ -37,10 +37,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UnAuthenticated.yaml'
+        '404':
+          description: Not Found
       operationId: get-current-account
       x-stoplight:
         id: 56dotah8tv67d
-      description: Retrieve Information about the Current Account
+      description: 'Retrieve Information about the Current Account '
       tags:
         - GetCurrentAccount
       x-internal: false
@@ -57,7 +59,7 @@ paths:
       tags:
         - PostCurrentAccount
     put:
-      summary: Update current account
+      summary: Update current account ndshdjsh
       operationId: put-current-account
       responses:
         '204':
@@ -82,8 +84,8 @@ paths:
           type: number
         name: customerNumber
         in: path
-        required: true
         description: '123456789'
+        required: true
 x-internal: true
 tags:
   - name: GetCurrentAccount
